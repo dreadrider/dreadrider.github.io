@@ -89,28 +89,16 @@ step = 0
 
 result = []
 
-if(result.length == 0){console.log("yes")}
-else{console.log("no")}
-
-var dataread = document.getElementById("rdata")
-dataread.addEventListener("change",function(evt) {
-    file = evt.target.files
-    reader = new FileReader();
-    reader.readAsText(file[0]);
-    reader.onload = function(ev) {
-	temp = reader.result.split("\n")
+var read = function(){
+    data = jQuery.get("datato3000.csv", null, function(){
+	reader = data.responseText;
+	temp = reader.split("\n")
 	for (i=0;i<temp.length;i++) {
 	    result[i] = temp[i].split(",")
 	}
 	console.log(result);
-    }
-},false)
-
-var read = function(){
-	data = jQuery.get("datato3000.csv", null, function(){
-	temp = data.responseText;
-	document.getElementById("output2").innerText = temp;
-	})
+	document.getElementById("output2").innerText = reslut;
+    })
 }
 
 var datawrite = document.getElementById("wdata")
