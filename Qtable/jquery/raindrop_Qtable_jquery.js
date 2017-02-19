@@ -96,8 +96,6 @@ var read = function(){
 	for (i=0;i<temp.length;i++) {
 	    result[i] = temp[i].split(",")
 	}
-	console.log(result);
-	document.getElementById("output2").innerText = result;
     })
 }
 
