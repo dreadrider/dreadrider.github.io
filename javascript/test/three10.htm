@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Aristotle's wheel paradox</title>
+
+    <script src="mrdoob-three.js-a8853b8/build/three.js"></script>
+    <script src="mrdoob-three.js-a8853b8/examples/fonts/helvetiker_regular.typeface.js"></script>
+    <style>
+      @font-face {
+        font-family: 'Nanum Pen Script';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://dl.dropboxusercontent.com/u/18672700/test/download/NanumPenScript-Regular.ttf) format('truetype');
+      }      
+      body {
+        font-family: 'Nanum Pen Script', cursive;
+      }
+    </style>
+</head>
+
+<body>
+<h1>Aristotle's wheel paradox</h1>
+<table><tr>
+<td>
+<div id="render"></div>
+</td>
+<td valign=top><div><p>
+This is a kind of thought experiment.<br>
+사고실험을 한번 해보자<br>
+<br>
+A radius of big cylinder is 10.<br>
+And a radius of small one is 5.<br>
+<br>
+Now, big cube and small cube are checked.<br>
+And this situation is Aristotle's wheel paradox.<br>
+<br>
+So, could you check off big cube?<br>
+Because constrained condition is checked,<br>
+short radius will be seleceted automatically.<br>
+<br>
+Slide rotation slider until 2pi(The value has a radian).<br>
+The object will move to 10pi(pi is about 3.14)<br>
+which is a circumference of small cylinder.<br>
+<br>
+And then, slide until 0 and check on big cube.<br>
+And check off small cube and slide until 2pi.<br>
+The object will move to 20pi<br>
+which is a curcumference of big cylinder.<br>
+<br>
+Well, Slide to start point and check on both cubes.<br>
+How long distance will the object move? 10pi or 20pi?<br>
+For convenience, first condition set to move to 20pi.<br>
+<br>
+You can checked off constrained condition,<br>
+then you can select any radius freely.<br>
+<br>
+Galilei said small one jump and jump infinitely.<br>
+However, perhaps big one slip and slip infinitely on the contrary.<br>
+</p></div></td>
+</tr></table>
+<br>
+<div id="ctrl">
+Rotation : <input id="range" type="range" min="0" max="100" value="0" step="1" oninput="chg(this.value);" onchange="chg(this.value);">
+<input id="radio1" type="radio" name="radio" checked>Long radius
+<input id="radio2" type="radio" name="radio">Short radius
+<input id="const" type="checkbox" checked>Constrained condition(or Free Cond.)
+<br>
+<input id="chk1" type="checkbox" checked>Big cube
+<input id="chk2" type="checkbox" checked>Small cube
+</div>
+<script type="text/javascript">
+
+    var renderer, scene, camera, light, controls;
+    var cylinder, cylinder2, cube, cube2, plane;
+    var line, line2, line3, line4;
+    var text, text2, text3, text4, tchg;
+    var rad1, rad2, chk1, chk2, con, radius;
+
+    init();
+    loop();
+
+    function chg(v) {
+	tchg=v;
+	cylinder.position.x=tchg/100*2*Math.PI*radius-30;
+	cylinder.rotation.y=-tchg/100*2*Math.PI;
+	cylinder2.position.x=tchg/100*2*Math.PI*radius-30;
+	cylinder2.rotation.y=-tchg/100*2*Math.PI;
+    }
+
+    function loop() {
+	    if(rad1.checked){
+		radius=10;
+	    } else {
+		radius=5;
+	    }
+	    if(chk1.checked){
+	        cube.visible=true;
+		text3.visible=true;
+		text4.visible=true;
+		line3.visible=true;
+		line4.visible=true;
+		if(con.checked){
+			rad1.checked=true;
+			rad2.checked=false;
+		}
+	    } else {
+	        cube.visible=false;
+		text3.visible=false;
+		text4.visible=false;
+		line3.visible=false;
+		line4.visible=false;
+		if(con.checked){
+			rad1.checked=false;
+			rad2.checked=true;
+		}
+	    }
+	    if(chk2.checked){
+	        cube2.visible=true;
+		text.visible=true;
+		text2.visible=true;
+		line.visible=true;
+		line2.visible=true;
+	    } else {
+	        cube2.visible=false;
+		text.visible=false;
+		text2.visible=false;
+		line.visible=false;
+		line2.visible=false;
+	    }
+	    text2.position.set( -40+2*Math.PI*radius, 0, 7.5 );
+	    text4.position.set( -40+2*Math.PI*radius, -5, 2.5 );
+	    controls.update();
+	    renderer.render(scene, camera);
+	    window.requestAnimationFrame(loop);
+    }
+
+
+    function init() {
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize( 800, 600 );
+//            document.body.appendChild( renderer.domElement );
+            document.getElementById("render").appendChild( renderer.domElement );
+
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(
+                                            35,             // Field of view
+                                            800 / 600,      // Aspect ratio
+                                            0.1,            // Near plane
+                                            10000           // Far plane
+                                        );
+            camera.position.set( 65, 80, 40 );
+            camera.lookAt( {x:50, y:0, z:0 } );
+//	    camera.lookAt( scene.position ); 
+            scene.add( camera );
+
+	    controls = new THREE.TrackballControls( camera, renderer.domElement );
+		controls.noRotate = false;
+		controls.noZoom = false;
+		controls.noPan = false;
+
+ 	    cylinder = new THREE.Mesh(new THREE.CylinderGeometry(10, 10, 5, 50, 50, false), new THREE.MeshLambertMaterial({
+            map: THREE.ImageUtils.loadTexture('5912.png')}) );
+	    cylinder.rotation.x=Math.PI/2;
+	    cylinder.position.set( -30, 10, 0 );
+	    scene.add( cylinder );
+
+	    cylinder2 = new THREE.Mesh(new THREE.CylinderGeometry(5, 5, 5, 50, 50, false), new THREE.MeshLambertMaterial({
+            map: THREE.ImageUtils.loadTexture('5912.png')}) );
+	    cylinder2.rotation.x=Math.PI/2;
+	    cylinder2.position.set( -30, 10, 5 );
+	    scene.add( cylinder2 );
+
+	    cube = new THREE.Mesh(new THREE.CubeGeometry( 150, 5, 5 ),
+					new THREE.MeshPhongMaterial( { ambient: 0xff3333, color: 0xff9999, specular: 0xff7777, shininess: 80, shading: THREE.SmoothShading, transparent: true } ));
+	    cube.position.set( 0, -2.5, 0);
+	    cube.material.opacity=0.7;
+	    scene.add( cube );
+
+	    cube2 = new THREE.Mesh(new THREE.CubeGeometry( 150, 10, 5 ),
+					new THREE.MeshPhongMaterial( { ambient: 0x3333ff, color: 0x9999ff, specular: 0x7777ff, shininess: 80, shading: THREE.SmoothShading, transparent: true } ));
+	    cube2.position.set( 0, 0, 5);
+	    cube2.material.opacity=0.7;
+	    scene.add( cube2 );
+
+	    plane = new THREE.Mesh( new THREE.PlaneGeometry( 200, 200, 10, 10 ),
+					new THREE.MeshBasicMaterial( { color: 0x000000, opacity: 0.25, transparent: true, wireframe: true } ) );
+
+	    plane.position.set( 0, -10, 0 );
+            plane.rotation.set( -Math.PI/2, 0, 0 );
+	    scene.add( plane );
+
+	    var geometry = new THREE.Geometry();
+	    geometry.vertices.push(new THREE.Vector3(-75, 5, 7.5));
+	    geometry.vertices.push(new THREE.Vector3(75, 5, 7.5));      
+	    line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { linewidth: 5, color: 0x000000 } ) ) 
+	    scene.add( line );
+
+	    geometry = new THREE.Geometry();
+	    geometry.vertices.push(new THREE.Vector3(-75, 5, 2.5));
+	    geometry.vertices.push(new THREE.Vector3(75, 5, 2.5));      
+	    line2 = new THREE.Line( geometry, new THREE.LineBasicMaterial( { linewidth: 5, color: 0x000000 } ) ) 
+	    scene.add( line2 );
+
+	    geometry = new THREE.Geometry();
+	    geometry.vertices.push(new THREE.Vector3(-75, 0, 2.5));
+	    geometry.vertices.push(new THREE.Vector3(75, 0, 2.5));      
+	    line3 = new THREE.Line( geometry, new THREE.LineBasicMaterial( { linewidth: 5, color: 0x000000 } ) ) 
+	    scene.add( line3 );
+
+	    geometry = new THREE.Geometry();
+	    geometry.vertices.push(new THREE.Vector3(-75, 0, -2.5));
+	    geometry.vertices.push(new THREE.Vector3(75, 0, -2.5));      
+	    line4 = new THREE.Line( geometry, new THREE.LineBasicMaterial( { linewidth: 5, color: 0x000000 } ) ) 
+	    scene.add( line4 );
+
+	    var material = new THREE.MeshLambertMaterial( { color: 0x000000, wireframe:false } );
+	    var textg = new THREE.TextGeometry( '0', {font: 'helvetiker', size:5, height:0.1} );
+	    text = new THREE.Mesh( textg, material );
+	    text.position.set( -30, 0, 7.5 );
+	    scene.add( text );
+
+	    textg = new THREE.TextGeometry( '2pi', {font: 'helvetiker', size:5, height:0.1} );
+	    text2 = new THREE.Mesh( textg, material );
+	    text2.position.set( -40+20*Math.PI, 0, 7.5 );
+	    scene.add( text2 );
+
+	    textg = new THREE.TextGeometry( '0', {font: 'helvetiker', size:5, height:0.1} );
+	    text3 = new THREE.Mesh( textg, material );
+	    text3.position.set( -30, -5, 2.5 );
+	    scene.add( text3 );
+
+	    textg = new THREE.TextGeometry( '2pi', {font: 'helvetiker', size:5, height:0.1} );
+	    text4 = new THREE.Mesh( textg, material );
+	    text4.position.set( -40+20*Math.PI, -5, 2.5 );
+	    scene.add( text4 );
+
+	    scene.add( new THREE.AmbientLight( 0x707070 ) );
+
+				light = new THREE.SpotLight( 0xf0f0f0, 1 );
+				light.position.set( 0, 100, 100 );
+				light.castShadow = true;
+				light.shadowCameraNear = 100;
+				light.shadowCameraFar = camera.far;
+				light.shadowCameraFov = 50;
+				light.shadowBias = -0.00022;
+				light.shadowDarkness = 0.5;
+				light.shadowMapWidth = 2048;
+				light.shadowMapHeight = 2048;
+				scene.add(light);
+
+	    rad1=document.getElementById("radio1");
+	    rad2=document.getElementById("radio2");
+	    chk1=document.getElementById("chk1");
+	    chk2=document.getElementById("chk2");
+	    con=document.getElementById("const");
+
+	    chk1.addEventListener('click',function(){
+		if(!chk2.checked){
+		    this.checked=true;
+		}
+	    });
+	    chk2.addEventListener('click',function(){
+		if(!chk1.checked){
+		    this.checked=true;
+		}
+	    });
+
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Getting Started with Three.js</title>
+
+    <script src="mrdoob-three.js-a8853b8/build/three.js"></script>
+    <script type="text/javascript">
+	
+	var rendere, scene, camera, light, projector;
+	var controls;
+	var cubes, plane, bt;
+	var intersects;
+
+	var  mouse = new THREE.Vector2(),
+	offset = new THREE.Vector3();
+	
+	window.onload = function() {
+			startthree();
+	}
+	
+	function startthree() {
+			init();
+			loop();
+	}
+	
+	function loop() {
+			controls.update();
+			renderer.clear();
+			renderer.render( scene, camera );
+			window.requestAnimationFrame( loop );
+	}
+	
+	function init() {
+			renderer = new THREE.WebGLRenderer();
+			renderer.setSize( 1280, 720 );
+			document.body.appendChild( renderer.domElement );
+		
+			scene = new THREE.Scene();
+			camera = new THREE.PerspectiveCamera( 35, 1280/720, 1, 10000 );
+			camera.position.set( 0, 100, 100 );
+			camera.lookAt(scene.position);
+		
+			scene.add(camera);
+		
+			light = new THREE.DirectionalLight( 0xffffff, 1, 0 );
+			light.position.set( 100, 100, 100 );
+		
+			scene.add(light);
+
+			plane = new THREE.Mesh( new THREE.PlaneGeometry( 100, 100, 10, 10 ),
+					new THREE.MeshBasicMaterial( { color: 0x000000, opacity: 0.25, transparent: true, wireframe: true } ) );
+			plane.visible = true;
+			plane.rotation.set( -Math.PI/2, 0, 0 );
+			scene.add( plane );
+
+			projector = new THREE.Projector();
+		
+			controls = new THREE.TrackballControls( camera );
+			
+			cubes = [];
+			for ( var i = 0; i < 5; i++) {
+					var temp = [];
+					for ( var j = 0; j < 5; j++) {
+							var cube = new THREE.Mesh(
+										new THREE.CubeGeometry( 1, 1, 1 ),
+										new THREE.MeshLambertMaterial( { color: 0x99f399 } )
+										);
+							cube.position.set( j * 10 - 20, 0, i * 10 - 20 );
+							temp.push( cube );
+					}
+					cubes.push( temp );
+			}
+			
+			for ( var i = 0; i < 5; i++) {
+					for ( var j = 0; j < 5; j++) {
+							scene.add( cubes[i][j] );
+					}
+			}
+
+			console.log("start");
+
+			bt = new blc4();
+			bt.init();
+			bt.add();
+			bt.setpos( 10, 10, 10 );
+			
+
+			renderer.domElement.addEventListener('mousedown',onmousedown, false);
+			
+	}
+
+	blc4 = function() {};
+	blc4.pt = blc4.prototype;
+	blc4.pt.cubes = [];
+
+//	THREE.Mesh.prototype.loc = new THREE.Vector3();
+	THREE.Mesh.prototype.locx = 0;
+	THREE.Mesh.prototype.locy = 0;
+	THREE.Mesh.prototype.locz = 0;
+
+	blc4.pt.init = function() {
+	    this.mkc(3,3,3,-3.5,0,-3.5);
+	    this.mkc(3,3,3,3.5,0,-3.5);
+	    this.mkc(3,3,3,-3.5,0,3.5);
+	    this.mkc(3,3,3,3.5,0,3.5);
+	    this.mkc(3,1,4,-3.5,-1,0);
+	    this.mkc(3,1,4,3.5,-1,0);
+	    this.mkc(4,1,10,0,-1,0);
+	}
+
+	blc4.pt.mkc = function(a,b,c,d,e,f) {
+		var cube = new THREE.Mesh(new THREE.CubeGeometry(a, b, c),
+        	                          new THREE.MeshLambertMaterial( { color: 0x99ff55 } )
+                                          );
+		cube.position.set(d, e, f);
+//		cube.loc.copy( new THREE.Vector3( d, e, f ) );
+		cube.locx = d;		
+		cube.locy = e;
+		cube.locz = f;
+
+		this.cubes.push(cube);
+	}
+
+	blc4.pt.add = function() {
+	    for (var i = 0; i<this.cubes.length; i++) {
+		scene.add(this.cubes[i]);
+	    }
+	}
+	blc4.pt.setpos = function( a, b, c) {
+	    for(var i = 0; i<this.cubes.length; i++) {
+//		this.cubes[i].position.set( this.cubes[i].loc.x+a, this.cubes[i].loc.y+b, this.cubes[i].loc.z+c);
+		this.cubes[i].position.set( this.cubes[i].locx+a, this.cubes[i].locy+b, this.cubes[i].locz+c);
+	    }
+	}
+
+	function onmousedown(ev) {
+	    ev.preventDefault();
+
+	    controls.enable = false;
+
+	    mouse.x = ( ev.clientX / renderer.domElement.width ) * 2 - 1;
+	    mouse.y = - ( ev.clientY / renderer.domElement.height ) * 2 + 1;
+
+	    console.log(mouse.x+","+mouse.y);
+
+	    var vector = new THREE.Vector3( mouse.x, mouse.y, 0.5);
+	    projector.unprojectVector( vector, camera);
+
+	    var ray = new THREE.Ray( camera.position, vector.subSelf( camera.position ).normalize() );
+
+	    intersects = ray.intersectObject( plane );
+
+//	    offset.copy( intersects[ 0 ].point ).subSelf( plane.position );
+//	    bt.cubes[0].position.copy( intersects[ 0 ].point.subSelf( offset ) );
+	    bt.setpos( intersects[0].point.x, intersects[0].point.y, intersects[0].point.z);
+	    console.log(intersects[0]);
+
+	    controls.enable = true;
+	}
+    </script>
+</head>
+<body></body>
+</html>

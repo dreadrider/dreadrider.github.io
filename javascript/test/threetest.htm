@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Getting Started with Three.js</title>
+
+    <script src="mrdoob-three.js-a8853b8/build/three.js"></script>
+    <script type="text/javascript">
+
+    var renderer, scene, camera, light, controls;
+    var cube, plane, line;
+
+    window.onload = function() {
+	    startthree();
+    }
+
+    function startthree() {
+	    initthree();
+	    loop();
+    }
+
+    var t=0;
+    function loop() {
+	    t++;
+ 	    controls.update();
+	    renderer.clear();
+	    renderer.render(scene, camera);
+	    window.requestAnimationFrame(loop);
+    }
+
+    function cubem(a,b,c,d,e,f) {
+	    cube = new THREE.Mesh(
+                            new THREE.CubeGeometry( a, b, c ),
+                            new THREE.MeshPhongMaterial( { color: 0xFFFF000 } )
+                        );
+	    cube.position.set(d,e,f);
+    }
+
+
+    function initthree() {
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize( 800, 600 );
+            document.body.appendChild( renderer.domElement );
+
+            scene = new THREE.Scene();
+
+            camera = new THREE.PerspectiveCamera(
+                                            35,             // Field of view
+                                            800 / 600,      // Aspect ratio
+                                            0.1,            // Near plane
+                                            10000           // Far plane
+                                        );
+            camera.position.set( 0, 0, 100 );
+            //camera.lookAt( {x:0, y:0, z:0 } );
+	    camera.lookAt( scene.position ); 
+
+            scene.add( camera );
+
+	    controls = new THREE.TrackballControls( camera );
+
+	    plane = new THREE.Mesh(
+                                    new THREE.PlaneGeometry( 40, 40 ),
+                                    new THREE.MeshPhongMaterial( { color: 0xddffdd } )
+                                );
+
+	    plane.position.set( 0, -10, 0 );
+            plane.rotation.set( -Math.PI/2, 0, 0 );
+
+
+            scene.add( plane );
+
+	    cubem(10,10,10,-12,0,-12);
+            scene.add( cube );
+
+	    cubem(10,10,10,12,0,-12);
+            scene.add( cube );
+
+	    cubem(10,10,10,-12,0,12);
+            scene.add( cube );
+
+	    cubem(10,10,10,12,0,12);
+            scene.add( cube );
+
+	    cubem(3,1,4,-3.5,-1,0);
+            scene.add( cube );
+
+	    cubem(3,1,4,3.5,-1,0);
+            scene.add( cube );
+
+	    cubem(4,1,10,0,-1,0);
+            scene.add( cube );
+
+	    sphere = new THREE.Mesh(new THREE.SphereGeometry(5,32,32),
+				    new THREE.MeshPhongMaterial( {color: 0xffff00} )
+                        );
+	    sphere.position.set(10,10,0);
+	    scene.add( sphere );
+	    
+	    //light = new THREE.DirectionalLight(0xdddddd, 1.0, 0);
+            light = new THREE.PointLight( 0xdddddd );
+            light.position.set( 50, 100, 50 );
+            scene.add( light );
+	    
+        };
+
+    </script>
+</head>
+
+<body></body>
+
+</html>

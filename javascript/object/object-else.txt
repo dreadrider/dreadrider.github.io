@@ -1,0 +1,218 @@
+canvas = document.createElement('canvas')
+<canvas>​
+ctx = canvas.getContext('2d')
+CanvasRenderingContext2D {textBaseline: "alphabetic", textAlign: "start", font: "10px sans-serif", lineDashOffset: 0, miterLimit: 10…}
+document.body.appendChild(canvas)
+<canvas>​
+canvas.width = 400
+400
+canvas.height = 400
+400
+ctx.fillRect(0,0,400,400)
+undefined
+Ptcl = function () {}
+function () {}
+Ptcl.pt = Ptcl.prototype
+Ptcl {}
+Ptcl.pt.x = 100
+100
+Ptcl.pt.y = 100
+100
+Ptcl.pt.draw = function () {
+Uncaught SyntaxError: Unexpected end of input
+Ptcl.pt.draw = function () {
+
+
+Uncaught SyntaxError: Unexpected end of input
+Ptcl.pt.draw = function () {
+    
+
+
+Uncaught SyntaxError: Unexpected end of input
+Ptcl.pt.x = 0
+0
+Ptcl.pt.y = 0
+0
+Ptcl.pt.init = function() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+}
+function () {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+}
+p = new Ptcl()
+Ptcl {x: 0, y: 0, init: function}__proto__: Ptclconstructor: function () {}init: function () {x: 0y: 0__proto__: Object__defineGetter__: function __defineGetter__() { [native code] }__defineSetter__: function __defineSetter__() { [native code] }__lookupGetter__: function __lookupGetter__() { [native code] }__lookupSetter__: function __lookupSetter__() { [native code] }constructor: function Object() { [native code] }hasOwnProperty: function hasOwnProperty() { [native code] }isPrototypeOf: function isPrototypeOf() { [native code] }propertyIsEnumerable: function propertyIsEnumerable() { [native code] }toLocaleString: function toLocaleString() { [native code] }toString: function toString() { [native code] }valueOf: function valueOf() { [native code] }get __proto__: function __proto__() { [native code] }set __proto__: function __proto__() { [native code] }
+p.init()
+undefined
+dir(p)
+Ptclx: 77.54669860005379y: 239.8196505382657__proto__: Ptcl
+undefined
+Ptcl.pt.draw = function() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+    ctx.closePath();
+    ctx.fill();
+}
+function () {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+    ctx.closePath();
+    ctx.fill();
+}
+Ptcl.pt.r = 0
+0
+Ptcl.pt.init
+function () {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+}
+Ptcl.pt.init = function () {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.r = Math.random() * 10;
+}
+function () {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.r = Math.random() * 10;
+}
+p = new Ptcl()
+Ptcl {x: 0, y: 0, init: function, draw: function, r: 0}
+p.init()
+undefined
+dir(p)
+Ptclr: 0.7445147354155779x: 363.9628832228482y: 242.06002335995436__proto__: Ptcl
+undefined
+delete p
+true
+pageXOffset
+0
+ptcls = []
+[]
+addptcls = function() {
+    p = new Ptcl();
+    p.init();
+    ptcls.push(p);
+}
+function () {
+    p = new Ptcl();
+    p.init();
+    ptcls.push(p);
+}
+addptcls
+function () {
+    p = new Ptcl();
+    p.init();
+    ptcls.push(p);
+}
+addptcls = function (n) {
+    for(var i = 0; i < n; i++) {
+        p = new Ptcl();
+        p.init();
+        ptcls.push(p);
+    }
+}
+function (n) {
+    for(var i = 0; i < n; i++) {
+        p = new Ptcl();
+        p.init();
+        ptcls.push(p);
+    }
+}
+clearptcls = function() {
+    for(var i = 0; i < ptcls.length; i++) ptcls.pop();
+}
+function () {
+    for(var i = 0; i < ptcls.length; i++) ptcls.pop();
+}
+addptcls(5)
+undefined
+ptcls
+[Ptclr: 2.0454167923890054x: 182.92083917185664y: 388.35821505635977__proto__: Ptcl, Ptclr: 4.533342735376209x: 368.6117436736822y: 53.94149525091052__proto__: Ptcl, Ptclr: 8.852551188319921x: 182.94338528066874y: 70.23726785555482__proto__: Ptcl, Ptcl, Ptcl]
+ctx.clearRect(0,0,400,400)
+undefined
+clearptcls()
+undefined
+ptcls
+[Ptclr: 2.0454167923890054x: 182.92083917185664y: 388.35821505635977__proto__: Ptcl, Ptcl]
+clearptcls
+function () {
+    for(var i = 0; i < ptcls.length; i++) ptcls.pop();
+}
+clearptcls = function () {
+    var n = ptcls.length;
+    for(var i = 0; i < n; i++) ptcls.pop();
+}
+function () {
+    var n = ptcls.length;
+    for(var i = 0; i < n; i++) ptcls.pop();
+}
+clearptcls()
+undefined
+ptcls
+[]
+addptcls(5)
+undefined
+ptcls
+[Ptcl, Ptcl, Ptcl, Ptcl, Ptcl]
+clearptcls()
+undefined
+ptcls
+[]
+loop = function() {
+    for(var i in ptcls) ptcls[i].draw();
+}
+function () {
+    for(var i in ptcls) ptcls[i].draw();
+}
+ptcls
+[]
+addptcls(5)
+undefined
+loop()
+undefined
+ptcls
+[Ptclr: 2.5233777868561447x: 368.79699109122157y: 230.19555965438485__proto__: Ptcl, Ptclr: 5.708597342018038x: 300.4286674782634y: 331.01467937231064__proto__: Ptcl, Ptclr: 7.177900094538927x: 236.44095044583082y: 239.7480519488454__proto__: Ptcl, Ptclr: 6.218262140173465x: 358.036604244262y: 200.0346140936017__proto__: Ptcl, Ptclr: 0.2862996468320489x: 265.38379583507776y: 85.32191812992096__proto__: Ptcl]
+Ptcl.pt.init
+function () {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.r = Math.random() * 10;
+}
+Ptcl.pt.init = function () {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.r = Math.random() * 5 + 5;
+}
+function () {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.r = Math.random() * 5 + 5;
+}
+clearptcls()
+undefined
+ptcls
+[]
+addptcls(5)
+undefined
+loop()
+undefined
+loop
+function () {
+    for(var i in ptcls) ptcls[i].draw();
+}
+loop = function () {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i in ptcls) ptcls[i].draw();
+}
+function () {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i in ptcls) ptcls[i].draw();
+}
+loop()
+undefined
+addptcls(95)
+undefined
+loop()
+undefined

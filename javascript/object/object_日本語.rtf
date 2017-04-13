@@ -1,0 +1,2314 @@
+{\rtf1\ansi\ansicpg932\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset128 HiraKakuProN-W3;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 canvas = document.createElement('canvas')\
+<canvas>\uc0\u8203 \
+ctx = canvas.getContext('2d')\
+CanvasRenderingContext2D \{textBaseline: "alphabetic", textAlign: "start", font: "10px sans-serif", lineDashOffset: 0, miterLimit: 10\'85\}\
+canvas.width = 400\
+400\
+canvas.height = 400\
+400\
+
+\f1 \'8e\'d4
+\f0  = function () \{\}\
+function () \{\}\
+
+\f1 \'8e\'d4
+\f0 .pt = 
+\f1 \'8e\'d4
+\f0 .prototype\
+
+\f1 \'8e\'d4
+\f0  \{\}\
+
+\f1 \'8e\'d4
+\f0 .pt.x = 0\
+0\
+
+\f1 \'8e\'d4
+\f0 .pt.y = 0\
+0\
+
+\f1 \'8e\'d4
+\f0 .pt.x
+\f1 \'91\'ac\'93\'78
+\f0  = 0\
+0\
+
+\f1 \'8e\'d4
+\f0 .pt.y
+\f1 \'91\'ac\'93\'78
+\f0  = 0\
+0\
+
+\f1 \'8e\'d4
+\f0 .pt.dt = 0.1\
+0.1\
+
+\f1 \'8e\'d4
+\f0 .pt.
+\f1 \'8c\'5e
+\f0  = ''\
+""\
+car01 = new 
+\f1 \'8e\'d4
+\f0 ()\
+
+\f1 \'8e\'d4
+\f0  \{x: 0, y: 0, x
+\f1 \'91\'ac\'93\'78
+\f0 : 0, y
+\f1 \'91\'ac\'93\'78
+\f0 : 0, dt: 0.1\'85\}__proto__: 
+\f1 \'8e\'d4
+\f0 constructor: function () \{\}dt: 0.1x: 0x
+\f1 \'91\'ac\'93\'78
+\f0 : 0y: 0y
+\f1 \'91\'ac\'93\'78
+\f0 : 0
+\f1 \'8c\'5e
+\f0 : ""__proto__: Object\
+delete car01\
+true\
+caro1\
+VM621:2 Uncaught ReferenceError: caro1 is not defined\
+car01\
+VM631:2 Uncaught ReferenceError: car01 is not defined\
+
+\f1 \'8e\'d4
+\f0 \
+function () \{\}\
+dir(
+\f1 \'8e\'d4
+\f0 )\
+VM226:1590 function () \{\}arguments: nullcaller: nulllength: 0name: ""prototype: 
+\f1 \'8e\'d4
+\f0 constructor: function () \{\}dt: 0.1x: 0x
+\f1 \'91\'ac\'93\'78
+\f0 : 0y: 0y
+\f1 \'91\'ac\'93\'78
+\f0 : 0
+\f1 \'8c\'5e
+\f0 : ""__proto__: Objectpt: 
+\f1 \'8e\'d4
+\f0 constructor: function () \{\}dt: 0.1x: 0x
+\f1 \'91\'ac\'93\'78
+\f0 : 0y: 0y
+\f1 \'91\'ac\'93\'78
+\f0 : 0
+\f1 \'8c\'5e
+\f0 : ""__proto__: Object__proto__: function Empty() \{\}<function scope>\
+undefined\
+
+\f1 \'8e\'d4\'8c\'51
+\f0  = []\
+[]\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0  = function(n) \{\
+    for(var i = 0; i < n; i++) \{\
+        car = new 
+\f1 \'8e\'d4
+\f0 ();\
+        car.init();\
+        
+\f1 \'8e\'d4\'8c\'51
+\f0 .push(car);\
+    \}\
+\}\
+function (n) \{\
+    for(var i = 0; i < n; i++) \{\
+        car = new 
+\f1 \'8e\'d4
+\f0 ();\
+        car.init();\
+        
+\f1 \'8e\'d4\'8c\'51
+\f0 .push(car);\
+    \}\
+\}\
+
+\f1 \'8e\'d4
+\f0 .pt.init = function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (3)\
+undefined\
+dir(
+\f1 \'8e\'d4\'8c\'51
+\f0 )\
+VM226:1590 Array[3]0: 
+\f1 \'8e\'d4
+\f0 x: 6.689700856804848x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 319.5353922434151y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 1: 
+\f1 \'8e\'d4
+\f0 x: 396.3964552618563x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 175.13088677078485y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 2: 
+\f1 \'8e\'d4
+\f0 x: 227.64668008312583x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 166.11972069367766y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 length: 3__proto__: Array[0]\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+undefined\
+dir(
+\f1 \'8e\'d4\'8c\'51
+\f0 )\
+VM226:1590 Array[33]0: 
+\f1 \'8e\'d4
+\f0 1: 
+\f1 \'8e\'d4
+\f0 2: 
+\f1 \'8e\'d4
+\f0 3: 
+\f1 \'8e\'d4
+\f0 4: 
+\f1 \'8e\'d4
+\f0 5: 
+\f1 \'8e\'d4
+\f0 6: 
+\f1 \'8e\'d4
+\f0 7: 
+\f1 \'8e\'d4
+\f0 8: 
+\f1 \'8e\'d4
+\f0 9: 
+\f1 \'8e\'d4
+\f0 10: 
+\f1 \'8e\'d4
+\f0 11: 
+\f1 \'8e\'d4
+\f0 12: 
+\f1 \'8e\'d4
+\f0 13: 
+\f1 \'8e\'d4
+\f0 14: 
+\f1 \'8e\'d4
+\f0 15: 
+\f1 \'8e\'d4
+\f0 16: 
+\f1 \'8e\'d4
+\f0 17: 
+\f1 \'8e\'d4
+\f0 18: 
+\f1 \'8e\'d4
+\f0 x: 385.8471750281751x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 247.75282982736826y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 19: 
+\f1 \'8e\'d4
+\f0 20: 
+\f1 \'8e\'d4
+\f0 21: 
+\f1 \'8e\'d4
+\f0 22: 
+\f1 \'8e\'d4
+\f0 x: 83.39169584214687x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 132.67214186489582y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 23: 
+\f1 \'8e\'d4
+\f0 24: 
+\f1 \'8e\'d4
+\f0 25: 
+\f1 \'8e\'d4
+\f0 26: 
+\f1 \'8e\'d4
+\f0 x: 246.81003419682384x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 4.819082375615835y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 27: 
+\f1 \'8e\'d4
+\f0 28: 
+\f1 \'8e\'d4
+\f0 x: 20.418882183730602x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 368.6350703239441y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 29: 
+\f1 \'8e\'d4
+\f0 x: 55.37771098315716x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 10.313009284436703y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 30: 
+\f1 \'8e\'d4
+\f0 x: 388.8377916999161x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 15.344215091317892y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 31: 
+\f1 \'8e\'d4
+\f0 x: 382.1572401560843x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 291.89488710835576y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 32: 
+\f1 \'8e\'d4
+\f0 length: 33__proto__: Array[0]\
+undefined\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+1\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+1\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+1\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+1\
+Math.floor(Math.random() * 2)\
+1\
+Math.floor(Math.random() * 2)\
+1\
+Math.floor(Math.random() * 2)\
+1\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+1\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+1\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+0\
+Math.floor(Math.random() * 2)\
+1\
+
+\f1 \'8e\'d4
+\f0 .pt.init = function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+
+\f1 \'8e\'d4
+\f0 .pt.init = function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        console.log = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        console.log = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0  = function () \{\
+    var n = 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length;\
+    for(var i = 0; i < n; i++) \{\
+        
+\f1 \'8e\'d4\'8c\'51
+\f0 .pop();\
+    \}\
+\}\
+function () \{\
+    var n = 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length;\
+    for(var i = 0; i < n; i++) \{\
+        
+\f1 \'8e\'d4\'8c\'51
+\f0 .pop();\
+    \}\
+\}\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+
+\f1 \'8e\'d4\'8c\'51
+\f0 \
+[]\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+undefined\
+
+\f1 \'8e\'d4
+\f0 .pt.init\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        console.log = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+
+\f1 \'8e\'d4
+\f0 .pt.init = function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+undefined\
+console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ')\
+VM2040:2 
+\f1 \'91\'e5\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+    \} else \{\
+        console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+    \}\
+VM2044:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+    \} else \{\
+        console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+    \}\
+\}\
+VM226:762 Uncaught SyntaxError: Unexpected token \}\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2055:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2056:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2057:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2058:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2059:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2060:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2061:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2062:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2063:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2064:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2065:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2066:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2067:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2068:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2069:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==1) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2070:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==1) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2071:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==1.0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2072:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random * 2)==1.0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2073:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random() * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2074:5 
+\f1 \'8f\'ac\'8c\'5e
+\f0 \
+undefined\
+if(Math.floor(Math.random() * 2)==0) \{\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+\} else \{\
+    console.log('
+\f1 \'8f\'ac\'8c\'5e
+\f0 ');\
+\}\
+VM2075:3 
+\f1 \'91\'e5\'8c\'5e
+\f0 \
+undefined\
+
+\f1 \'8e\'d4
+\f0 .pt.init = function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random() * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random() * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        console.log('
+\f1 \'91\'e5\'8c\'5e
+\f0 ');\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+16VM2076:7 
+\f1 \'91\'e5\'8c\'5e
+\f0 \
+undefined\
+
+\f1 \'8e\'d4
+\f0 .pt.init = function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random() * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random() * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+undefined\
+dir(
+\f1 \'8e\'d4\'8c\'51
+\f0 )\
+VM226:1590 Array[30]0: 
+\f1 \'8e\'d4
+\f0 1: 
+\f1 \'8e\'d4
+\f0 2: 
+\f1 \'8e\'d4
+\f0 3: 
+\f1 \'8e\'d4
+\f0 4: 
+\f1 \'8e\'d4
+\f0 5: 
+\f1 \'8e\'d4
+\f0 6: 
+\f1 \'8e\'d4
+\f0 x: 219.43399952724576x
+\f1 \'91\'ac\'93\'78
+\f0 : 5y: 146.67283287271857y
+\f1 \'91\'ac\'93\'78
+\f0 : 5
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'91\'e5\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 7: 
+\f1 \'8e\'d4
+\f0 8: 
+\f1 \'8e\'d4
+\f0 9: 
+\f1 \'8e\'d4
+\f0 10: 
+\f1 \'8e\'d4
+\f0 11: 
+\f1 \'8e\'d4
+\f0 12: 
+\f1 \'8e\'d4
+\f0 13: 
+\f1 \'8e\'d4
+\f0 14: 
+\f1 \'8e\'d4
+\f0 15: 
+\f1 \'8e\'d4
+\f0 16: 
+\f1 \'8e\'d4
+\f0 17: 
+\f1 \'8e\'d4
+\f0 18: 
+\f1 \'8e\'d4
+\f0 x: 66.70010527595878x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 105.09116100147367y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 19: 
+\f1 \'8e\'d4
+\f0 x: 298.4944399446249x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 45.394207164645195y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 20: 
+\f1 \'8e\'d4
+\f0 x: 105.72540303692222x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 6.28056088462472y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 21: 
+\f1 \'8e\'d4
+\f0 22: 
+\f1 \'8e\'d4
+\f0 x: 267.0877965167165x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 52.11299853399396y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 23: 
+\f1 \'8e\'d4
+\f0 x: 75.28979759663343x
+\f1 \'91\'ac\'93\'78
+\f0 : 5y: 204.3555692769587y
+\f1 \'91\'ac\'93\'78
+\f0 : 5
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'91\'e5\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 24: 
+\f1 \'8e\'d4
+\f0 x: 250.0920221209526x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 362.4108428135514y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 25: 
+\f1 \'8e\'d4
+\f0 26: 
+\f1 \'8e\'d4
+\f0 27: 
+\f1 \'8e\'d4
+\f0 x: 98.79041267558932x
+\f1 \'91\'ac\'93\'78
+\f0 : 5y: 339.41586958244443y
+\f1 \'91\'ac\'93\'78
+\f0 : 5
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'91\'e5\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 28: 
+\f1 \'8e\'d4
+\f0 29: 
+\f1 \'8e\'d4
+\f0 length: 30__proto__: Array[0]\
+undefined\
+
+\f1 \'8e\'d4
+\f0 .pt.
+\f1 \'88\'da\'93\'ae
+\f0  = function () \{\
+    this.x += this.x
+\f1 \'91\'ac\'93\'78
+\f0  * this.dt;\
+    this.y += this.y
+\f1 \'91\'ac\'93\'78
+\f0  * this.dt;\
+\}\
+function () \{\
+    this.x += this.x
+\f1 \'91\'ac\'93\'78
+\f0  * this.dt;\
+    this.y += this.y
+\f1 \'91\'ac\'93\'78
+\f0  * this.dt;\
+\}\
+
+\f1 \'8e\'d4
+\f0 .pt.
+\f1 \'95\'5c\'8e\'a6
+\f0  = function () \{\
+    ctx.beginPath();\
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);\
+    ctx.closePath();\
+    ctx.fill();\
+\}\
+function () \{\
+    ctx.beginPath();\
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);\
+    ctx.closePath();\
+    ctx.fill();\
+\}\
+
+\f1 \'8e\'d4
+\f0 .pt.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 0;\
+0\
+
+\f1 \'8e\'d4
+\f0 .pt.init = function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random() * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 5;\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 2;\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random() * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 5;\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 2;\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+
+\f1 \'8e\'d4
+\f0 .pt.
+\f1 \'95\'5c\'8e\'a6
+\f0  = function () \{\
+    ctx.beginPath();\
+    ctx.arc(this.x, this.y, this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0 , 0, Math.PI * 2, false);\
+    ctx.closePath();\
+    ctx.fill();\
+\}\
+function () \{\
+    ctx.beginPath();\
+    ctx.arc(this.x, this.y, this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0 , 0, Math.PI * 2, false);\
+    ctx.closePath();\
+    ctx.fill();\
+\}\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (5)\
+undefined\
+
+\f1 \'8e\'d4\'8c\'51
+\f0 [2].
+\f1 \'95\'5c\'8e\'a6
+\f0 ()\
+undefined\
+document.body.appendChild(canvas)\
+<canvas width=\uc0\u8203 "400" height=\u8203 "400">\u8203 \
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (5)\
+undefined\
+
+\f1 \'8e\'d4\'8c\'51
+\f0 [2].
+\f1 \'95\'5c\'8e\'a6
+\f0 ()\
+undefined\
+dir(
+\f1 \'8e\'d4\'8c\'51
+\f0 )\
+VM226:1590 Array[40]0: 
+\f1 \'8e\'d4
+\f0 1: 
+\f1 \'8e\'d4
+\f0 2: 
+\f1 \'8e\'d4
+\f0 x: 341.66208328679204x
+\f1 \'91\'ac\'93\'78
+\f0 : 2y: 329.70558535307646y
+\f1 \'91\'ac\'93\'78
+\f0 : 2
+\f1 \'8c\'5e
+\f0 : "
+\f1 \'8f\'ac\'8c\'5e
+\f0 "__proto__: 
+\f1 \'8e\'d4
+\f0 3: 
+\f1 \'8e\'d4
+\f0 4: 
+\f1 \'8e\'d4
+\f0 5: 
+\f1 \'8e\'d4
+\f0 6: 
+\f1 \'8e\'d4
+\f0 7: 
+\f1 \'8e\'d4
+\f0 8: 
+\f1 \'8e\'d4
+\f0 9: 
+\f1 \'8e\'d4
+\f0 10: 
+\f1 \'8e\'d4
+\f0 11: 
+\f1 \'8e\'d4
+\f0 12: 
+\f1 \'8e\'d4
+\f0 13: 
+\f1 \'8e\'d4
+\f0 14: 
+\f1 \'8e\'d4
+\f0 15: 
+\f1 \'8e\'d4
+\f0 16: 
+\f1 \'8e\'d4
+\f0 17: 
+\f1 \'8e\'d4
+\f0 18: 
+\f1 \'8e\'d4
+\f0 19: 
+\f1 \'8e\'d4
+\f0 20: 
+\f1 \'8e\'d4
+\f0 21: 
+\f1 \'8e\'d4
+\f0 22: 
+\f1 \'8e\'d4
+\f0 23: 
+\f1 \'8e\'d4
+\f0 24: 
+\f1 \'8e\'d4
+\f0 25: 
+\f1 \'8e\'d4
+\f0 26: 
+\f1 \'8e\'d4
+\f0 27: 
+\f1 \'8e\'d4
+\f0 28: 
+\f1 \'8e\'d4
+\f0 29: 
+\f1 \'8e\'d4
+\f0 30: 
+\f1 \'8e\'d4
+\f0 31: 
+\f1 \'8e\'d4
+\f0 32: 
+\f1 \'8e\'d4
+\f0 33: 
+\f1 \'8e\'d4
+\f0 34: 
+\f1 \'8e\'d4
+\f0 35: 
+\f1 \'8e\'d4
+\f0 36: 
+\f1 \'8e\'d4
+\f0 37: 
+\f1 \'8e\'d4
+\f0 38: 
+\f1 \'8e\'d4
+\f0 39: 
+\f1 \'8e\'d4
+\f0 length: 40__proto__: Array[0]\
+undefined\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+undefined\
+
+\f1 \'8e\'d4\'8c\'51
+\f0 [2].
+\f1 \'95\'5c\'8e\'a6
+\f0 ()\
+undefined\
+loop = function () \{\
+    ctx.clearRect(0, 0, canvas.width, canvas.height);\
+    for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'95\'5c\'8e\'a6
+\f0 ();\
+    for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'88\'da\'93\'ae
+\f0 ();\
+\}    \
+function () \{\
+    ctx.clearRect(0, 0, canvas.width, canvas.height);\
+    for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'95\'5c\'8e\'a6
+\f0 ();\
+    for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'88\'da\'93\'ae
+\f0 ();\
+\}\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop()\
+undefined\
+loop = function () \{\
+    if(pause) \{\
+        ctx.clearRect(0, 0, canvas.width, canvas.height);\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'95\'5c\'8e\'a6
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'88\'da\'93\'ae
+\f0 ();\
+    \}\
+\}\
+function () \{\
+    if(pause) \{\
+        ctx.clearRect(0, 0, canvas.width, canvas.height);\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'95\'5c\'8e\'a6
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'88\'da\'93\'ae
+\f0 ();\
+    \}\
+\}\
+loop = function () \{\
+    if(!pause) \{\
+        ctx.clearRect(0, 0, canvas.width, canvas.height);\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'95\'5c\'8e\'a6
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'88\'da\'93\'ae
+\f0 ();\
+    \}\
+\}\
+function () \{\
+    if(!pause) \{\
+        ctx.clearRect(0, 0, canvas.width, canvas.height);\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'95\'5c\'8e\'a6
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'88\'da\'93\'ae
+\f0 ();\
+    \}\
+\}\
+loop()\
+VM3138:3 Uncaught ReferenceError: pause is not defined\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+loop()\
+VM3138:3 Uncaught ReferenceError: pause is not defined\
+loopdelegate = function () \{ loop(); \}\
+function () \{ loop(); \}\
+var timer = setInterval(loopdelegate(),1000/60)\
+VM3138:3 Uncaught ReferenceError: pause is not defined\
+pause = false\
+false\
+timer\
+undefined\
+var timer = setInterval(loopdelegate(),1000/60)\
+undefined\
+pause = true\
+true\
+dir(
+\f1 \'8e\'d4\'8c\'51
+\f0 )\
+VM226:1590 Array[0]length: 0__proto__: Array[0]\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+undefined\
+pause = false\
+false\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+var timer = setInterval(loopdelegate,1000/60)\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+undefined\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+pause = true\
+true\
+
+\f1 \'8e\'d4
+\f0 .pt.
+\f1 \'8b\'ab\'8a\'45\'90\'fc
+\f0  = function () \{\
+   if(this.x > canvas.width) this.x = 1;\
+   if(this.y > canvas.height) this.y = 1;\
+\}\
+function () \{\
+   if(this.x > canvas.width) this.x = 1;\
+   if(this.y > canvas.height) this.y = 1;\
+\}\
+loop = function () \{\
+    if(pause) \{\
+        ctx.clearRect(0, 0, canvas.width, canvas.height);\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'95\'5c\'8e\'a6
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'88\'da\'93\'ae
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'8b\'ab\'8a\'45\'90\'fc
+\f0 ();\
+    \}\
+\}\
+function () \{\
+    if(pause) \{\
+        ctx.clearRect(0, 0, canvas.width, canvas.height);\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'95\'5c\'8e\'a6
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'88\'da\'93\'ae
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'8b\'ab\'8a\'45\'90\'fc
+\f0 ();\
+    \}\
+\}\
+
+\f1 \'8e\'d4\'8c\'51
+\f0 \
+[]\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+undefined\
+
+\f1 \'8e\'d4
+\f0 .pt.dt = 0.5\
+0.5\
+
+\f1 \'8e\'d4
+\f0 .pt.dt = 1\
+1\
+pause = false\
+false\
+loop = function () \{\
+    if(!pause) \{\
+        ctx.clearRect(0, 0, canvas.width, canvas.height);\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'95\'5c\'8e\'a6
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'88\'da\'93\'ae
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'8b\'ab\'8a\'45\'90\'fc
+\f0 ();\
+    \}\
+\}\
+function () \{\
+    if(!pause) \{\
+        ctx.clearRect(0, 0, canvas.width, canvas.height);\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'95\'5c\'8e\'a6
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'88\'da\'93\'ae
+\f0 ();\
+        for(var i = 0; i < 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length; i++) 
+\f1 \'8e\'d4\'8c\'51
+\f0 [i].
+\f1 \'8b\'ab\'8a\'45\'90\'fc
+\f0 ();\
+    \}\
+\}\
+pause = true\
+true\
+
+\f1 \'8e\'d4
+\f0 .pt.init\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random() * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 5;\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 2;\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+function randomColor() \{\
+    return 'hsla(' + Math.floor(Math.random() * 360) + ',100%,50%,0.7)';\
+\}\
+undefined\
+
+\f1 \'8e\'d4
+\f0 .pt.init\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    if(Math.floor(Math.random() * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 5;\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 2;\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+
+\f1 \'8e\'d4
+\f0 .pt.init = function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    this.color = randomColor();\
+    if(Math.floor(Math.random() * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 5;\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 2;\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+function () \{\
+    this.x = Math.random() * canvas.width;\
+    this.y = Math.random() * canvas.height;\
+    this.color = randomColor();\
+    if(Math.floor(Math.random() * 2)==0) \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'91\'e5\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 5;\
+    \} else \{\
+        this.
+\f1 \'8c\'5e
+\f0  = '
+\f1 \'8f\'ac\'8c\'5e
+\f0 ';\
+        this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0  = 2;\
+    \}\
+    if(this.
+\f1 \'8c\'5e
+\f0  == '
+\f1 \'91\'e5\'8c\'5e
+\f0 ') \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 5;\
+    \} else \{\
+        this.x
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+        this.y
+\f1 \'91\'ac\'93\'78
+\f0  = 2;\
+    \}\
+\}\
+
+\f1 \'8e\'d4
+\f0 .pr.color = 'black';\
+VM48750:2 Uncaught TypeError: Cannot set property 'color' of undefined\
+
+\f1 \'8e\'d4
+\f0 .pt.color = 'black';\
+"black"\
+
+\f1 \'8e\'d4
+\f0 .pt.
+\f1 \'88\'da\'93\'ae
+\f0 \
+function () \{\
+    this.x += this.x
+\f1 \'91\'ac\'93\'78
+\f0  * this.dt;\
+    this.y += this.y
+\f1 \'91\'ac\'93\'78
+\f0  * this.dt;\
+\}\
+
+\f1 \'8e\'d4
+\f0 .pt.
+\f1 \'95\'5c\'8e\'a6
+\f0 \
+function () \{\
+    ctx.beginPath();\
+    ctx.arc(this.x, this.y, this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0 , 0, Math.PI * 2, false);\
+    ctx.closePath();\
+    ctx.fill();\
+\}\
+
+\f1 \'8e\'d4
+\f0 .pt.
+\f1 \'95\'5c\'8e\'a6
+\f0  = function () \{\
+    ctx.fillStyle = this.color;\
+    ctx.beginPath();\
+    ctx.arc(this.x, this.y, this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0 , 0, Math.PI * 2, false);\
+    ctx.closePath();\
+    ctx.fill();\
+\}\
+function () \{\
+    ctx.fillStyle = this.color;\
+    ctx.beginPath();\
+    ctx.arc(this.x, this.y, this.
+\f1 \'91\'e5\'82\'ab\'82\'b3
+\f0 , 0, Math.PI * 2, false);\
+    ctx.closePath();\
+    ctx.fill();\
+\}\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 \
+function () \{\
+    var n = 
+\f1 \'8e\'d4\'8c\'51
+\f0 .length;\
+    for(var i = 0; i < n; i++) \{\
+        
+\f1 \'8e\'d4\'8c\'51
+\f0 .pop();\
+    \}\
+\}\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+undefined\
+pause = false\
+false\
+
+\f1 \'8e\'d4
+\f0 .pt.dt = 0.5\
+0.5\
+
+\f1 \'8e\'d4
+\f0 .pt.dt = 0.2\
+0.2\
+function randomColor() \{\
+    return 'hsla(' + Math.floor(Math.random() * 200 + 50) + ',100%,50%,0.7)';\
+\}\
+undefined\
+pause = true\
+true\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (30)\
+undefined\
+pause = false\
+false\
+function randomColor() \{\
+    return 'hsla(' + Math.floor(Math.random() * 100 + 50) + ',100%,50%,0.7)';\
+\}\
+undefined\
+pause = true\
+true\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (100)\
+undefined\
+pause = false\
+false\
+function randomColor() \{\
+    return 'hsla(' + Math.floor(Math.random() * 300 + 250) + ',100%,50%,0.7)';\
+\}\
+undefined\
+
+\f1 \'8e\'d4\'8c\'51\'8d\'ed\'8f\'9c
+\f0 ()\
+undefined\
+
+\f1 \'8e\'d4\'90\'b6\'90\'ac
+\f0 (100)\
+undefined\
+pause = true\
+true}

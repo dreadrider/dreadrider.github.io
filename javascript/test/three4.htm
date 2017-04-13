@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Getting Started with Three.js</title>
+
+    <script src="mrdoob-three.js-a8853b8/build/three.js"></script>
+    <script type="text/javascript">
+	
+	var rendere, scene, camera, light, projector;
+	var controls;
+	var cubes, plane;
+	var DOWN, SELECTED, SELNUM=0;
+	var bts = [];
+
+	var mapt1 = new THREE.ImageUtils.loadTexture("texture1.png");
+	var mapt2 = new THREE.ImageUtils.loadTexture("texture2.png");
+
+	var  mouse = new THREE.Vector2(),
+	offset = new THREE.Vector3();
+	
+	window.onload = function() {
+			startthree();
+	}
+	
+	function startthree() {
+			init();
+			loop();
+	}
+	
+	function loop() {
+			controls.update();
+			renderer.clear();
+			renderer.render( scene, camera );
+			window.requestAnimationFrame( loop );
+	}
+	
+	function init() {
+//			renderer = new THREE.CanvasRenderer( { antialias: true } );
+			renderer = new THREE.WebGLRenderer( { antialias: true } );
+			renderer.setSize( 800, 800 );
+//			renderer.shadowMapEnabled = true;
+//			renderer.shadowMapSoft = true;
+
+			document.body.appendChild( renderer.domElement );
+		
+			scene = new THREE.Scene();
+			camera = new THREE.PerspectiveCamera( 35, 800/800, 1, 10000 );
+			camera.position.set( 0, 90, 60 );
+			camera.lookAt(scene.position);
+		
+			scene.add(camera);
+		
+//			light = new THREE.DirectionalLight( 0xffffff, 1, 0 );
+//			light.position.set( 100, 100, 100 );
+		
+//			scene.add(light);
+
+			scene.add( new THREE.AmbientLight( 0x505050 ) );
+
+				light = new THREE.SpotLight( 0xffffff, 0.5 );
+				light.position.set( 0, 1000, 1000 );
+				light.castShadow = true;
+				light.shadowCameraNear = 100;
+				light.shadowCameraFar = camera.far;
+				light.shadowCameraFov = 50;
+				light.shadowBias = -0.00022;
+				light.shadowDarkness = 0.5;
+				light.shadowMapWidth = 2048;
+				light.shadowMapHeight = 2048;
+
+			scene.add(light);
+
+			plane = new THREE.Mesh( new THREE.PlaneGeometry( 100, 100, 10, 10 ),
+					new THREE.MeshBasicMaterial( { color: 0x000000, opacity: 0.25, transparent: true, wireframe: true } ) );
+			plane.visible = false;
+			plane.rotation.set( -Math.PI/2, 0, 0 );
+			scene.add( plane );
+
+			projector = new THREE.Projector();
+		
+			controls = new THREE.TrackballControls( camera );
+				controls.rotateSpeed = 0.3;
+				controls.zoomSpeed = 0.7;
+				controls.panSpeed = 0.3;
+				controls.noZoom = false;
+				controls.noPan = false;
+//				controls.staticMoving = true;
+				controls.dynamicDampingFactor = 0.3;
+			
+			cubes = [];
+			for ( var i = 0; i < 5; i++) {
+				for ( var j = 0; j < 5; j++) {
+					var cube = new THREE.Mesh(
+						new THREE.CubeGeometry( 1, 1, 1 ),
+						new THREE.MeshLambertMaterial( { color: 0x99f399 } )
+						);
+					cube.position.set( j * 10 - 20, -0.5, i * 10 - 20 );
+					cube.put = false;
+					cubes.push( cube );
+				}
+			}
+			
+			for ( var i = 0; i < cubes.length; i++) {
+				scene.add( cubes[i] );
+			}
+
+			console.log("start");
+
+			for ( var i = 0; i < 4; i++ ) {
+				var bt = new blc4();
+				bt.init(i);
+				bt.add();
+				bt.setpos( -30+i*20,0,-40 );
+				bt.initpos = new THREE.Vector3( -30+i*20,0,-40 );
+				bts.push(bt);
+			}
+
+			renderer.domElement.addEventListener('mousedown',onmousedown, false);
+			renderer.domElement.addEventListener('mousemove',onmousemove, false);
+			renderer.domElement.addEventListener('mouseup',onmouseup, false);
+			document.addEventListener('keyup',onkeyup, false);
+//			renderer.domElement.addEventListener('keyup',onkeyup, false);
+			
+	}
+
+	blc4 = function() {};
+	blc4.pt = blc4.prototype;
+	blc4.cubes = [];
+	blc4.initpos = new THREE.Vector3();
+	blc4.kind = 0;
+        blc4.rot = 0;
+
+//	THREE.Mesh.prototype.loc = new THREE.Vector3();
+//	THREE.Mesh.prototype.locx = 0;
+//	THREE.Mesh.prototype.locy = 0;
+//	THREE.Mesh.prototype.locz = 0;
+//	THREE.Mesh.loc = new THREE.Vector3();
+//	THREE.Mesh.chk = false;
+//	THREE.Mesh.put = false;
+
+	blc4.pt.init = function(a) {
+	    this.cubes = [];
+	    this.mkc(10,1,10,0,0.5,0,0);
+	    if ( a < 1 ) this.mkc(3,2,4,-3.5,2,0,1);
+	    if ( a < 2 ) this.mkc(3,2,4,3.5,2,0,1);
+	    if ( a < 3 ) this.mkc(4,2,10,0,2,0,1);
+	    else {
+			this.mkc(3,2,4,3.5,2,0,1);
+			this.mkc(4,2,7,0,2,-1.5,1);
+	    }
+	    this.kind = a;
+	    this.rot = 0;
+	}
+
+	blc4.pt.mkc = function(a,b,c,d,e,f,g) {
+		var mapt;
+		if ( g ) mapt = mapt1;
+		else mapt = mapt2;
+		var geo = new THREE.CubeGeometry( a, b, c, 1, 1, 1,
+	[
+		new THREE.MeshBasicMaterial({map: mapt}), // right
+		new THREE.MeshBasicMaterial({map: mapt}), // left
+		new THREE.MeshBasicMaterial({map: mapt}), // top
+		new THREE.MeshBasicMaterial({map: mapt}), // bottom
+		new THREE.MeshBasicMaterial({map: mapt}), // back
+		new THREE.MeshBasicMaterial({map: mapt}), // front
+	]        	                          
+
+                                          );
+
+		var material =  new THREE.MeshFaceMaterial();
+		var cube = new THREE.Mesh( geo, material);
+
+		cube.position.set(d, e, f);
+		cube.material.ambient = cube.material.color;
+//		cube.castShadow = true;
+//		cube.receiveShadow = true;
+
+		cube.loc = new THREE.Vector3( d, e, f );
+//		cube.locx = d;		
+//		cube.locy = e;
+//		cube.locz = f;
+
+
+		this.cubes.push(cube);
+	}
+
+	blc4.pt.add = function() {
+	    for (var i = 0; i<this.cubes.length; i++) {
+		scene.add(this.cubes[i]);
+	    }
+	}
+	blc4.pt.setpos = function( a, b, c) {
+	    for(var i = 0; i<this.cubes.length; i++) {
+		this.cubes[i].position.set( this.cubes[i].loc.x+a, this.cubes[i].loc.y+b, this.cubes[i].loc.z+c);
+//		this.cubes[i].position.set( this.cubes[i].locx+a, this.cubes[i].locy+b, this.cubes[i].locz+c);
+	    }
+	}
+
+	blc4.pt.rotation = function() {
+	    if( this.kind != 0 ) {
+		this.rot = (this.rot + 1) % 4
+		var m = new THREE.Matrix4();
+		m.makeRotationY(Math.PI/2);
+		if ( this.kind == 1 ) {
+		    var v = m.multiplyVector3(this.cubes[1].loc);
+		    this.cubes[1].postion = v;
+		    this.cubes[1].loc = v;
+		    this.cubes[1].rotation.y += Math.PI/2;
+		    this.cubes[2].rotation.y += Math.PI/2;
+		}
+		if ( this.kind == 2 ) {
+		    this.cubes[1].rotation.y += Math.PI/2;
+		}
+		if ( this.kind == 3 ) {
+		    var v = m.multiplyVector3(this.cubes[1].loc);
+		    this.cubes[1].postion = v;
+		    this.cubes[1].loc = v;
+		    this.cubes[1].rotation.y += Math.PI/2;
+		    v = m.multiplyVector3(this.cubes[2].loc);
+		    this.cubes[2].postion = v;
+		    this.cubes[2].loc = v;
+		    this.cubes[2].rotation.y += Math.PI/2;
+		}
+	    }
+	}
+
+	function onmousedown(ev) {
+	    ev.preventDefault();
+
+	    DOWN = true;
+	    SELNUM = 0;
+
+	    mouse.x = ( ev.clientX / renderer.domElement.width ) * 2 - 1;
+	    mouse.y = - ( ev.clientY / renderer.domElement.height ) * 2 + 1;
+
+	    var vector = new THREE.Vector3( mouse.x, mouse.y, 0.5);
+	    projector.unprojectVector( vector, camera);
+
+	    var ray = new THREE.Ray( camera.position, vector.subSelf( camera.position ).normalize() );
+
+	    for ( var i = 0; i < 4; i++ ) {
+		    var intersects = ray.intersectObjects( bts[i].cubes );
+		    if ( intersects.length > 0 )  {
+			controls.enabled = false;
+			SELECTED = true;
+			SELNUM = i;
+		    }
+	    }
+
+//	    offset.copy( intersects[ 0 ].point ).subSelf( plane.position );
+//	    bt.cubes[0].position.copy( intersects[ 0 ].point.subSelf( offset ) );
+	}
+
+	function onmousemove(ev) {
+	    ev.preventDefault();
+
+	    if(DOWN) {
+		if(SELECTED) {
+
+			mouse.x = ( ev.clientX / renderer.domElement.width ) * 2 - 1;
+			mouse.y = - ( ev.clientY / renderer.domElement.height ) * 2 + 1;
+
+			var vector = new THREE.Vector3( mouse.x, mouse.y, 0.5);
+			projector.unprojectVector( vector, camera);
+
+			var ray = new THREE.Ray( camera.position, vector.subSelf( camera.position ).normalize() );
+
+			var intersects = ray.intersectObject( plane );
+
+//			offset.copy( intersects[ 0 ].point ).subSelf( plane.position );
+//			bt.cubes[0].position.copy( intersects[ 0 ].point.subSelf( offset ) );
+
+			var temp = new THREE.Vector3();
+//			temp.copy( intersects[0].point ).subSelf( cubes[0].position );
+
+			for( var i=0; i<cubes.length; i++ ) {
+				var dist = temp.copy( intersects[0].point ).distanceTo( cubes[i].position );
+				if( Math.abs( dist ) < 3 ) {
+					bts[SELNUM].setpos( cubes[i].position.x, cubes[i].position.y, cubes[i].position.z);
+					cubes[i].chk = true;
+					break;
+				}
+				else {
+					bts[SELNUM].setpos( intersects[0].point.x, intersects[0].point.y, intersects[0].point.z);
+					cubes[i].chk = false;
+				}					
+			}
+		}
+	    }
+	}
+
+	function onmouseup(ev) {
+	    ev.preventDefault();
+
+	    DOWN = false;
+	    SELECTED = false;
+            controls.enabled = true;
+
+	    for ( var i=0; i<cubes.length; i++ ) if(cubes[i].chk && !cubes[i].put) {
+		var rot = bts[SELNUM].rot;
+		var bt = new blc4();
+		bt.init(SELNUM);
+		bt.add();
+		for ( var j = 0; j < rot; j++ ) bt.rotation();
+		bt.setpos( cubes[i].position.x, cubes[i].position.y, cubes[i].position.z );
+		bts.push(bt);
+		cubes[i].put = true;
+		console.log("try");
+	    }
+	    var btn = bts[SELNUM];
+	    btn.setpos( btn.initpos.x, btn.initpos.y, btn.initpos.z );
+	}
+
+	function onkeyup(ev) {
+	    if ( ev.keyCode === 80 ) {
+		if ( plane.visible ) plane.visible = false;
+		else plane.visible = true;
+	    }
+	    if (DOWN&&SELNUM) {
+		if ( ev.keyCode === 82 ) {
+		    bts[SELNUM].rotation();
+		}
+	    }
+	}
+
+    </script>
+</head>
+<body>
+controls -> left click and drag : rotate, right click and drag : pan, wheel click and drag : zoom<br>
+keyboard -> to press 'r' on dragging block is to rotate block to 90 deg. to press 'p' is toggled showing plane.
+</body>
+</html>

@@ -1,0 +1,106 @@
+canvas = document.createElement('canvas')
+
+ctx = canvas.getContext('2d')
+
+canvas.width = 400
+
+canvas.height = 400
+
+document.body.appendChild(canvas)
+
+é‘ = function () {}
+
+é‘.pt = é‘.prototype
+
+é‘.pt.x = 0
+
+é‘.pt.y = 0
+
+é‘.pt.xë¨ìx = 0
+
+é‘.pt.yë¨ìx = 0
+
+é‘.pt.dt = 0.1
+
+é‘.pt.å^ = ''
+
+é‘.pt.ëÂÇ´Ç≥ = 0;
+
+car01 = new é‘()
+
+delete car01
+
+dir(é‘)
+
+é‘åQ = []
+
+function randomColor() {
+    return 'hsla(' + Math.floor(Math.random() * 360) + ',100%,50%,0.7)';
+}
+
+é‘.pt.init = function () {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.color = randomColor();
+    if(Math.floor(Math.random() * 2)==0) {
+        this.å^ = 'ëÂå^';
+        this.ëÂÇ´Ç≥ = 5;
+    } else {
+        this.å^ = 'è¨å^';
+        this.ëÂÇ´Ç≥ = 2;
+    }
+    if(this.å^ == 'ëÂå^') {
+        this.xë¨ìx = 5;
+        this.yë¨ìx = 5;
+    } else {
+        this.xë¨ìx = 2;
+        this.yë¨ìx = 2;
+    }
+}
+
+é‘ê∂ê¨ = function(n) {
+    for(var i = 0; i < n; i++) {
+        car = new é‘();
+        car.init();
+        é‘åQ.push(car);
+    }
+}
+
+é‘åQçÌèú = function () {
+    var n = é‘åQ.length;
+    for(var i = 0; i < n; i++) {
+        é‘åQ.pop();
+    }
+}
+
+é‘.pt.à⁄ìÆ = function () {
+    this.x += this.xë¨ìx * this.dt;
+    this.y += this.yë¨ìx * this.dt;
+}
+
+é‘.pt.ï\é¶ = function () {
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.ëÂÇ´Ç≥, 0, Math.PI * 2, false);
+    ctx.closePath();
+    ctx.fill();
+}
+
+é‘.pt.ã´äEê¸ = function () {
+   if(this.x > canvas.width) this.x = 1;
+   if(this.y > canvas.height) this.y = 1;
+}
+
+é‘.pt.dt = 0.5
+
+loop = function () {
+    if(!pause) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for(var i = 0; i < é‘åQ.length; i++) é‘åQ[i].ï\é¶();
+        for(var i = 0; i < é‘åQ.length; i++) é‘åQ[i].à⁄ìÆ();
+        for(var i = 0; i < é‘åQ.length; i++) é‘åQ[i].ã´äEê¸();
+    }
+}
+
+function loopDelegate() { loop(); };
+var timer = setInterval(loopDelegate, 1000 / 60);

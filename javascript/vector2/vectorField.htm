@@ -1,0 +1,68 @@
+﻿<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <script src='js/DAT.GUI.js'></script>
+    <!-- http://silentmatt.com/javascript-expression-evaluator/ -->
+    <script src="js/parser.js"></script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src="mrdoob-three.js-a8853b8/examples/fonts/helvetiker_regular.typeface.js"></script>
+    <style>
+      @font-face {
+        font-family: 'Nanum Pen Script';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://dl.dropboxusercontent.com/u/18672700/test/download/NanumPenScript-Regular.ttf) format('truetype');
+//	src: url(https://dl.dropboxusercontent.com/u/18672700/test/download/download/NotoSansKR-Black.otf) format('truetype');
+      }      
+      h1, p {
+        font-family: 'Nanum Pen Script', cursive;
+//	font-family: 'Noto Sans Kaithi', sans-serif;
+      }
+      p {
+	font-size: 16pt;
+      }
+      #back {
+	position: relative;
+	display: flex;
+      }
+      #canvassample {
+//	transform: rotate(20deg);
+      }
+      #datcont {
+	position: relative;
+	left: 50px;
+      }
+    </style>
+    <title>Canvas</title>
+  </head>
+  <body>
+    <h1>벡터장 플로터 "Vector Field Plot"</h1>
+    <div id="back">
+    <canvas id="canvassample" width="400" height="400"></canvas>
+    <div id="datcont"></div>
+    <script src="js/vectorField.js"></script>
+    </div>
+    <p>2차원 벡터장을 그려준다. 조작방법은 다음과 같다.<br>
+       Vx컴포넌트와 Vy컴포넌트에 f(x,y)의 함수를 넣는다.기본적으로 각각의 f(x,y)는 x와 y이다.<br>
+       표현방법은 일반적인 수학표기와 같다.단,곱하기생략은 불가하다.곱하기는 *을 사용하고 승수는 ^를 이용한다.<br>
+       e^2는 exp(2)로 사용하고, 삼각함수 등은 sin(x)과 atan(y) 등으로 쓴다.exp(sin(x-y)^2)같이 쓸 수 있다.<br>
+       파라메터 조절스위치는 4개가 있다.<br>
+       벡터크기는 실제 좌표사이즈의 벡터를 그리면 넘쳐버리므로 적당한 사이즈로 설정한다.즉,화갈표의 크기가 좌표값에 대응하지 않지만 상대적인 크기는 의존한다.<br>
+       스텝사이즈는 좌표를 표시하는 크기다. 벡터크기와 대응하므로 별로 조작할 필요는 없다. 더욱이 화살표의 크기가 좌표값에 대응하지 않아 의미도 적다.<br>
+       포인트 수는 가로(혹은 세로)의 점의 수 - 1 이다.이유는 0이 가운데 오기 때문이다.<br>
+       z축으로의 회전은 시계반대방향으로의 좌표축 회전이다. 따라서 각 벡터들은 시계방향으로 회전된다.<br>
+       다음은 온/오프 버튼이 3개가 있다.<br>
+       90도는 회전의 예로 90도 회전을 보인 것이다. 좌표계의 회전에도 벡터들의 방향이 변화되지 않는 벡터장도 있다.<br>
+       예를 들어 기본상황에서는 이 버튼을 누르면 x축의 좌표표시만 y축의 좌표표시로 변환된다. 즉,좌표계가 시계반대방향으로 90도 회전한 것이다.<br>
+       그러나 Vy의 함수에 x를 넣고 이 버튼을 누르면 벡터들의 방향이 바뀌는걸 확인할 수 있다.<br>
+       이러한 벡터장은 벡터가 아니라는 설명이 있었기 때문에 이 페이지를 작성하게 되었다.<br>
+       다음은 벡터크기의 고정이다. 벡터크기를 벡터장의 함수에 맞게 그리면 너무 커지거나 0으로 안보이게 될 때 사용한다.즉, 방향만으로 파악할 때 사용한다.<br>
+       다음은 스마트폰에서 크기를 작게 표시하기 위한 버튼이다. 기본적으로 스마트폰 화면에서 볼 수 있는 크기로 설정되어 있고,<br>
+       버튼을 누르면 데스크톱에서 좀 더 크게 볼 수 있도록 2배의 크기로 표현해준다.<br>
+       마지막 리드로우 버튼은 이상이 있을 시 재묘화해주는 버튼인데 평상시엔 사용할 필요가 없다.조절장치가 변화되면 자동적으로 벡터장도 그 값이 적용되어 그려진다.</p>
+    <p>밑의 문장은 다음버젼을 위한 수식 연습 (이콜 위에 삼각형은 원래 정의인데 연습삼아 사용)</p>
+    <p>2차방정식 \(ax^2 + bx + c = 0\)의 근의 공식은
+    $$x \triangleq {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+    이다.</p>
+  </body>
+</html>

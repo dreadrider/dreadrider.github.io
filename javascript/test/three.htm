@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Getting Started with Three.js</title>
+
+    <script src="mrdoob-three.js-a8853b8/build/three.js"></script>
+    <script type="text/javascript">
+
+    var renderer, scene, camera, light, controls;
+    var cube, plane, line;
+
+    window.onload = function() {
+	    startthree();
+    }
+
+    function startthree() {
+	    initthree();
+	    loop();
+    }
+
+    var t=0;
+    function loop() {
+	    t++;
+ 	    controls.update();
+	    renderer.clear();
+	    renderer.render(scene, camera);
+	    window.requestAnimationFrame(loop);
+    }
+
+
+    function initthree() {
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize( 800, 600 );
+            document.body.appendChild( renderer.domElement );
+
+            scene = new THREE.Scene();
+
+            camera = new THREE.PerspectiveCamera(
+                                            35,             // Field of view
+                                            800 / 600,      // Aspect ratio
+                                            0.1,            // Near plane
+                                            10000           // Far plane
+                                        );
+            camera.position.set( 0, 0, 100 );
+            //camera.lookAt( {x:0, y:0, z:0 } );
+	    camera.lookAt( scene.position ); 
+
+            scene.add( camera );
+
+	    controls = new THREE.TrackballControls( camera );
+
+	    plane = new THREE.Mesh(
+                                    new THREE.PlaneGeometry( 40, 40 ),
+                                    new THREE.MeshLambertMaterial( { color: 0xffff00 } )
+                                );
+
+	    plane.position.set( 0, -10, 0 );
+            plane.rotation.set( -Math.PI/2, 0, 0 );
+
+
+            scene.add( plane );
+
+            cube = new THREE.Mesh(
+                                    new THREE.CubeGeometry( 5, 5, 5 ),
+                                    new THREE.MeshLambertMaterial( { color: 0xFF0000 } )
+                                );
+
+            scene.add( cube );
+
+	    var points = [];
+	    points.push( new THREE.Vector3(0, 0, 0) );
+	    points.push( new THREE.Vector3(5, 0, 0) );
+	    points.push( new THREE.Vector3(5, 0, 5) );
+	    points.push( new THREE.Vector3(10, 0, 5) );
+	    points.push( new THREE.Vector3(10, 0, 10) );
+	    points.push( new THREE.Vector3(0, 0, 10) );
+	    
+		rota = new THREE.Mesh( new THREE.LatheGeometry( points, 20 ), new THREE.MeshLambertMaterial({
+                map: THREE.ImageUtils.loadTexture('check-background-sozai13.png')}) );
+
+		rota.position.set( 10, 10, 10 );
+		scene.add( rota );
+
+
+		var cylinder = new THREE.Mesh(new THREE.CylinderGeometry(10, 10, 5, 50, 50, false), new THREE.MeshLambertMaterial({
+                map: THREE.ImageUtils.loadTexture('591.png')}) );
+		cylinder.position.set( 10, 10, 0 );
+		scene.add( cylinder );
+
+
+
+	    var geometry = new THREE.Geometry();
+	    geometry.vertices.push(new THREE.Vector3(-10, 0, 0));
+	    geometry.vertices.push(new THREE.Vector3(0, 10, 0));
+	    geometry.vertices.push(new THREE.Vector3(10, 0, 0));
+
+	    var material = new THREE.LineBasicMaterial({
+		        color: 0x0000ff,
+	    });
+        
+	    line = new THREE.Line(geometry, material);
+
+	    scene.add( line );
+
+//	    light = new THREE.DirectionalLight(0xFFff00, 1.0, 0);
+            //var light = new THREE.PointLight( 0xffff00 );
+//            light.position.set( 100, 200, 100 );
+//            scene.add( light );    
+
+		scene.add( new THREE.AmbientLight( 0x505050 ) );
+
+				light = new THREE.SpotLight( 0xffffff, 0.5 );
+				light.position.set( 0, 1000, 1000 );
+				light.castShadow = true;
+				light.shadowCameraNear = 100;
+				light.shadowCameraFar = camera.far;
+				light.shadowCameraFov = 50;
+				light.shadowBias = -0.00022;
+				light.shadowDarkness = 0.5;
+				light.shadowMapWidth = 2048;
+				light.shadowMapHeight = 2048;
+
+			scene.add(light);
+
+        };
+
+    </script>
+</head>
+
+<body></body>
+
+</html>
