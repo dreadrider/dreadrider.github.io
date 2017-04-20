@@ -14,7 +14,7 @@ Ptcl.pt.t = 0
 Ptcl.pt.vt = 1
 Ptcl.pt.dt = 0.03
 
-pause=true;
+pause=0;
 
 Math.srandom = function() { return Math.random() * 2 -1; };
 
@@ -154,4 +154,12 @@ Ptcl.pt.interact = function() {
 
 function randomColor() {
 	return 'hsla(' + Math.floor(Math.random() * 360) + ',100%,50%,0.7)';
+}
+
+function pclick() {
+	pause = 1 - pause;
+}
+
+function aclick() {
+	addPtcls(10);
 }

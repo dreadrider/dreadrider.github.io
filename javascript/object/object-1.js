@@ -13,6 +13,8 @@ Ptcl.pt.r = 0
 Ptcl.pt.dt = 0.1
 Ptcl.pt.color = "black";
 
+pause = 0
+
 Math.srandom = function() { return Math.random() * 2 -1; };
 
 Ptcl.pt.init = function() {
@@ -96,4 +98,12 @@ Ptcl.pt.interact = function() {
 
 function randomColor() {
 	return 'hsla(' + Math.floor(Math.random() * 360) + ',100%,50%,0.1)';
+}
+
+function pclick() {
+	pause = 1 - pause;
+}
+
+function aclick() {
+	addPtcls(10);
 }
