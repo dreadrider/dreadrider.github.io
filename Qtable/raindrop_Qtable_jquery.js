@@ -90,7 +90,7 @@ step = 0
 result = []
 
 var read = function(){
-    data = jQuery.get("datato3000.csv", null, function(){
+    data = jQuery.get("datato1000000.csv", null, function(){
 	reader = data.responseText;
 	temp = reader.split("\n")
 	for (i=0;i<temp.length;i++) {
